@@ -24,7 +24,7 @@
             android:fontFamily="@font/bold_montserrat"
             android:text="@string/enpy"
             android:textColor="@color/primary_enpy"
-            android:textSize="50sp" />
+            android:textSize="52sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
             android:fontFamily="@font/semibold_montserrat"
             android:text="Enhance Your Personality"
             android:textColor="@color/primary_enpy"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 

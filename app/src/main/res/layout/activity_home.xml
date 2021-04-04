@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/menu_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/cart_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="40dp"
+        android:paddingTop="40dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold_montserrat"
+                android:text="Hey, Alena"
+                android:textColor="@color/primary_enpy"
+                android:textSize="23sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_line_pink"
+                android:paddingHorizontal="13dp"
+                android:paddingVertical="10dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background=""
+                    android:fontFamily="@font/medium_montserrat"
+                    android:gravity="center_vertical"
+                    android:hint="Search here..."
+                    android:inputType="text"
+                    android:textColor="@color/gray_enpy"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/search_icon"
+                    android:text="Button" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/semibold_montserrat"
+                android:text="Categories"
+                android:textColor="@color/primary_enpy"
+                android:textSize="19dp" />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/btn_round_pink"
+                        android:fontFamily="@font/semibold_montserrat"
+                        android:stateListAnimator="@null"
+                        android:text="Sweater"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/btn_round_pink"
+                        android:fontFamily="@font/semibold_montserrat"
+                        android:stateListAnimator="@null"
+                        android:text="Dress"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/btn_round_pink"
+                        android:fontFamily="@font/semibold_montserrat"
+                        android:stateListAnimator="@null"
+                        android:text="Skirt"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/btn_round_pink"
+                        android:fontFamily="@font/semibold_montserrat"
+                        android:stateListAnimator="@null"
+                        android:text="Blouse\n&amp;\nShirt"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/btn_round_pink"
+                        android:fontFamily="@font/semibold_montserrat"
+                        android:stateListAnimator="@null"
+                        android:text="Test"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/semibold_montserrat"
+                android:text="Popular Products"
+                android:textColor="@color/primary_enpy"
+                android:textSize="19dp" />
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:alignContent="flex_start"
+                app:alignItems="flex_start"
+                app:dividerDrawable="@drawable/divider"
+                app:flexWrap="wrap"
+                app:showDivider="middle">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_flexBasisPercent="47.2%">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/knit_sweater" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/regular_montserrat"
+                        android:text="Knit Sweater"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/semibold_montserrat"
+                        android:text="Rp 170.000"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_flexBasisPercent="47.2%">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/satin_dress" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/regular_montserrat"
+                        android:text="Satin Dress"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/semibold_montserrat"
+                        android:text="Rp 350.000"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_flexBasisPercent="47.2%">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/hammy_blouse" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/regular_montserrat"
+                        android:text="Hammy Blouse"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/semibold_montserrat"
+                        android:text="Rp 120.000"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_flexBasisPercent="47.2%">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/flare_satin_skirt" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/regular_montserrat"
+                        android:text="Flare Satin Skirt"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/semibold_montserrat"
+                        android:text="Rp 150.000"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </com.google.android.flexbox.FlexboxLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

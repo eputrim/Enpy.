@@ -11,5 +11,6 @@
     <color name="primary_enpy">#454545</color>
     <color name="pink_enpy">#FFB4A4</color>
     <color name="gray_enpy">#BDBDBD</color>
+    <color name="lightgray_enpy">#F3F3F3</color>
     <color name="disable_enpy">#E5E5E5</color>
 </resources>

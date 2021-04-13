@@ -1,4 +1,4 @@
-package viercimi.enpy.ui.gallery;
+package viercimi.enpy.ui.about;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import viercimi.enpy.R;
 
-public class GalleryFragment extends Fragment {
+public class AboutFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private AboutViewModel aboutViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+                             ViewGroup container, Bundle savedInstanceState) {
+        aboutViewModel =
+                new ViewModelProvider(this).get(AboutViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_about, container, false);
+        final TextView textView = root.findViewById(R.id.text_about);
+        aboutViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
@@ -30,4 +30,5 @@ public class GalleryFragment extends Fragment {
         });
         return root;
     }
+
 }

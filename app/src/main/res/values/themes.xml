@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Enpy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/primary_enpy</item>
         <item name="colorPrimaryVariant">@color/primary_enpy</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,6 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="colorNavigationItem">@color/primary_enpy</item>
+        <item name="colorNavigationItemSelected">@color/primary_enpy</item>
+        <item name="drawableNavigationItemBackground">@drawable/menu_background_color_state</item>
     </style>
     <style name="Theme.Enpy.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -19,4 +22,12 @@
     </style>
     <style name="Theme.Enpy.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.Enpy.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Widget.Custom.NavigationView" parent="Widget.Design.NavigationView">
+        <item name="itemIconTint">@color/primary_enpy</item>
+        <item name="itemTextColor">@color/primary_enpy</item>
+        <item name="itemBackground">?attr/drawableNavigationItemBackground</item>
+    </style>
+    <style name="MontserratTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/regular_montserrat</item>
+    </style>
 </resources>

@@ -14,20 +14,12 @@ import viercimi.enpy.R;
 
 public class OrderFragment extends Fragment {
 
-    private OrderViewModel orderViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        orderViewModel =
-                new ViewModelProvider(this).get(OrderViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_order, container, false);
-        final TextView textView = root.findViewById(R.id.text_order);
-        orderViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 

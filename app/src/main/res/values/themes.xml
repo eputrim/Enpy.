@@ -12,8 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="colorNavigationItem">@color/primary_enpy</item>
-        <item name="colorNavigationItemSelected">@color/primary_enpy</item>
+        <item name="android:listDivider">@color/gray_enpy</item>
         <item name="drawableNavigationItemBackground">@drawable/menu_background_color_state</item>
     </style>
     <style name="Theme.Enpy.NoActionBar">
@@ -28,6 +27,6 @@
         <item name="itemBackground">?attr/drawableNavigationItemBackground</item>
     </style>
     <style name="MontserratTextViewStyle" parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/regular_montserrat</item>
+        <item name="android:fontFamily">@font/medium_montserrat</item>
     </style>
 </resources>

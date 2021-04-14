@@ -3,16 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/account"
-            android:title="@string/menu_profile"
-            />
+            android:title="@string/menu_profile" />
         <item
             android:id="@+id/nav_order"
             android:icon="@drawable/truck"
             android:title="@string/menu_order" />
+    </group>
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/info"

@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/imageView7"
         android:layout_width="77dp"
         android:layout_height="44dp"
         android:background="@drawable/about_left"
@@ -42,7 +43,10 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="parent">
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -56,7 +60,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/back_icon"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,7 +78,7 @@
                     android:fontFamily="@font/bold_montserrat"
                     android:text="Enpy."
                     android:textColor="@color/primary_enpy"
-                    android:textSize="53dp"/>
+                    android:textSize="53dp" />
 
                 <TextView
                     android:id="@+id/textView6"

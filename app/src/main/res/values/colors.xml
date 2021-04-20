@@ -13,4 +13,8 @@
     <color name="gray_enpy">#BDBDBD</color>
     <color name="lightgray_enpy">#F3F3F3</color>
     <color name="disable_enpy">#E5E5E5</color>
+
+    <color name="darkgray_color">#585858</color>
+    <color name="blue_color">#7687A7</color>
+    <color name="salmon_color">#FFB37C</color>
 </resources>

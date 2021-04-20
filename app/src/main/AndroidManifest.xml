@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Enpy">
-        <activity android:name=".ProductCategory"></activity>
+        <activity android:name=".ProductDetail"></activity>
+        <activity android:name=".ProductCategory" />
         <activity android:name=".EditProfile" />
         <activity
             android:name=".Menu"

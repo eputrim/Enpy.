@@ -26,7 +26,7 @@
         android:fontFamily="@font/bold_montserrat"
         android:text="Hey, \nWelcome Back!"
         android:textColor="@color/primary_enpy"
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -77,7 +77,7 @@
                 android:inputType="textEmailAddress"
                 android:padding="16dp"
                 android:textColor="@color/gray_enpy"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -99,7 +99,7 @@
                 android:inputType="textPassword"
                 android:padding="16dp"
                 android:textColor="@color/gray_enpy"
-                android:textSize="15dp" />
+                android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout

@@ -73,7 +73,7 @@
                         android:fontFamily="@font/semibold_montserrat"
                         android:text="Hammy Blouse"
                         android:textColor="@color/primary_enpy"
-                        android:textSize="19dp" />
+                        android:textSize="19sp" />
 
                     <View
                         android:layout_width="0dp"
@@ -86,7 +86,7 @@
                         android:fontFamily="@font/semibold_montserrat"
                         android:text="Rp 150.000"
                         android:textColor="@color/pink_enpy"
-                        android:textSize="19dp" />
+                        android:textSize="19sp" />
                 </LinearLayout>
 
                 <TextView
@@ -96,7 +96,7 @@
                     android:fontFamily="@font/regular_montserrat"
                     android:text="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
                     android:textColor="@color/primary_enpy"
-                    android:textSize="14dp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
                     android:fontFamily="@font/medium_montserrat"
                     android:text="Size"
                     android:textColor="@color/primary_enpy"
-                    android:textSize="17dp" />
+                    android:textSize="17sp" />
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -121,7 +121,7 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginRight="15dp"
+                            android:layout_marginEnd="15dp"
                             app:cardCornerRadius="8dp">
 
                             <TextView
@@ -132,13 +132,13 @@
                                 android:gravity="center"
                                 android:text="S"
                                 android:textColor="@color/primary_enpy"
-                                android:textSize="14dp" />
+                                android:textSize="14sp" />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginRight="15dp"
+                            android:layout_marginEnd="15dp"
                             app:cardCornerRadius="8dp">
 
                             <TextView
@@ -149,13 +149,13 @@
                                 android:gravity="center"
                                 android:text="M"
                                 android:textColor="@color/primary_enpy"
-                                android:textSize="14dp" />
+                                android:textSize="14sp" />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginRight="15dp"
+                            android:layout_marginEnd="15dp"
                             app:cardCornerRadius="8dp">
 
                             <TextView
@@ -166,13 +166,13 @@
                                 android:gravity="center"
                                 android:text="L"
                                 android:textColor="@color/primary_enpy"
-                                android:textSize="14dp" />
+                                android:textSize="14sp" />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginRight="15dp"
+                            android:layout_marginEnd="15dp"
                             app:cardCornerRadius="8dp">
 
                             <TextView
@@ -183,7 +183,7 @@
                                 android:gravity="center"
                                 android:text="XL"
                                 android:textColor="@color/primary_enpy"
-                                android:textSize="14dp" />
+                                android:textSize="14sp" />
                         </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
@@ -196,7 +196,7 @@
                     android:fontFamily="@font/medium_montserrat"
                     android:text="Colors"
                     android:textColor="@color/primary_enpy"
-                    android:textSize="17dp" />
+                    android:textSize="17sp" />
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -212,7 +212,7 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginRight="15dp"
+                            android:layout_marginEnd="15dp"
                             app:cardCornerRadius="8dp">
 
                             <ImageView
@@ -223,13 +223,13 @@
                                 android:gravity="center"
                                 android:text="S"
                                 android:textColor="@color/primary_enpy"
-                                android:textSize="14dp" />
+                                android:textSize="14sp" />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginRight="15dp"
+                            android:layout_marginEnd="15dp"
                             app:cardCornerRadius="8dp">
 
                             <ImageView
@@ -239,13 +239,13 @@
                                 android:fontFamily="@font/semibold_montserrat"
                                 android:gravity="center"
                                 android:textColor="@color/primary_enpy"
-                                android:textSize="14dp" />
+                                android:textSize="14sp" />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginRight="15dp"
+                            android:layout_marginEnd="15dp"
                             app:cardCornerRadius="8dp">
 
                             <ImageView
@@ -255,7 +255,7 @@
                                 android:fontFamily="@font/semibold_montserrat"
                                 android:gravity="center"
                                 android:textColor="@color/primary_enpy"
-                                android:textSize="14dp" />
+                                android:textSize="14sp" />
                         </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
@@ -268,7 +268,7 @@
                     android:fontFamily="@font/medium_montserrat"
                     android:text="Quantity"
                     android:textColor="@color/primary_enpy"
-                    android:textSize="17dp" />
+                    android:textSize="17sp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -280,7 +280,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
-                        android:layout_marginRight="14dp"
+                        android:layout_marginEnd="14dp"
                         android:background="@drawable/minus_icon" />
 
                     <TextView
@@ -289,7 +289,7 @@
                         android:fontFamily="@font/semibold_montserrat"
                         android:text="1"
                         android:textColor="@color/primary_enpy"
-                        android:textSize="16dp" />
+                        android:textSize="16sp" />
 
                     <ImageView
                         android:layout_width="20dp"
@@ -316,7 +316,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="17dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
                         android:fontFamily="@font/semibold_montserrat"
                         android:text="Add to cart"
                         android:textColor="@color/white" />

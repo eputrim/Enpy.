@@ -26,7 +26,7 @@
         android:fontFamily="@font/bold_montserrat"
         android:text="Profile"
         android:textColor="@color/primary_enpy"
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -59,14 +59,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Alena Culhane"
-                    android:textSize="21dp"
+                    android:textSize="21sp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/medium_montserrat" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="alena@gmail.com"
-                    android:textSize="17dp"
+                    android:textSize="17sp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/regular_montserrat"/>
             </LinearLayout>
@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:text="Phone Number"
                     android:fontFamily="@font/medium_montserrat"
-                    android:textSize="17dp"
+                    android:textSize="17sp"
                     android:textColor="@color/black"/>
                 <View
                     android:layout_width="0dp"
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:text="Address"
                     android:fontFamily="@font/medium_montserrat"
-                    android:textSize="17dp"
+                    android:textSize="17sp"
                     android:textColor="@color/black"/>
                 <View
                     android:layout_width="0dp"

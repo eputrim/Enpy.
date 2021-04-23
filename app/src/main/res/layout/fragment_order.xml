@@ -40,7 +40,7 @@
                 android:fontFamily="@font/bold_montserrat"
                 android:text="Order \nHistory"
                 android:textColor="@color/primary_enpy"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -72,20 +72,33 @@
                         android:layout_marginStart="16dp"
                         android:orientation="vertical">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/medium_montserrat"
-                            android:text="Total: 410.000"
-                            android:textColor="@color/primary_enpy"
-                            android:textSize="16sp" />
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium_montserrat"
+                                android:text="Total: "
+                                android:textColor="@color/primary_enpy"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium_montserrat"
+                                android:text="410.000"
+                                android:textColor="@color/primary_enpy"
+                                android:textSize="16sp" />
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular_montserrat"
                             android:text="Mandiri"
-                            android:textSize="14dp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -129,20 +142,33 @@
                         android:layout_marginStart="16dp"
                         android:orientation="vertical">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/medium_montserrat"
-                            android:text="Total: 315.000"
-                            android:textColor="@color/primary_enpy"
-                            android:textSize="16sp" />
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium_montserrat"
+                                android:text="Total: "
+                                android:textColor="@color/primary_enpy"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium_montserrat"
+                                android:text="315.000"
+                                android:textColor="@color/primary_enpy"
+                                android:textSize="16sp" />
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular_montserrat"
                             android:text="BCA"
-                            android:textSize="14dp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -186,20 +212,34 @@
                         android:layout_marginStart="16dp"
                         android:orientation="vertical">
 
-                        <TextView
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/medium_montserrat"
-                            android:text="Total: 99.000"
-                            android:textColor="@color/primary_enpy"
-                            android:textSize="16sp" />
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium_montserrat"
+                                android:text="Total: "
+                                android:textColor="@color/primary_enpy"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium_montserrat"
+                                android:text="99.000"
+                                android:textColor="@color/primary_enpy"
+                                android:textSize="16sp" />
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular_montserrat"
                             android:text="DANA"
-                            android:textSize="14dp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <LinearLayout

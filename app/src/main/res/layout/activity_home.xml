@@ -68,12 +68,12 @@
                     android:hint="Search here..."
                     android:inputType="text"
                     android:textColor="@color/gray_enpy"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
 
                 <ImageView
                     android:layout_width="26dp"
                     android:layout_height="26dp"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_margin="5dp"
                     android:src="@drawable/search_icon"
@@ -87,7 +87,7 @@
                 android:fontFamily="@font/semibold_montserrat"
                 android:text="Categories"
                 android:textColor="@color/primary_enpy"
-                android:textSize="19dp" />
+                android:textSize="19sp" />
 
             <HorizontalScrollView
                 android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                         android:text="Sweater"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="80dp"
@@ -121,7 +121,7 @@
                         android:text="Dress"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="80dp"
@@ -133,7 +133,7 @@
                         android:text="Skirt"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="80dp"
@@ -145,7 +145,7 @@
                         android:text="Blouse\n&amp;\nShirt"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="80dp"
@@ -157,7 +157,7 @@
                         android:text="Test"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -168,7 +168,7 @@
                 android:fontFamily="@font/semibold_montserrat"
                 android:text="Popular Products"
                 android:textColor="@color/primary_enpy"
-                android:textSize="19dp" />
+                android:textSize="19sp" />
 
             <com.google.android.flexbox.FlexboxLayout
                 android:layout_width="match_parent"
@@ -350,7 +350,5 @@
 
         </LinearLayout>
     </ScrollView>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

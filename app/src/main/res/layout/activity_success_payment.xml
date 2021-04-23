@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SuccessPayment"
+    android:background="@color/pink_enpy">
+
+    <ImageView
+        android:layout_width="58dp"
+        android:layout_height="184dp"
+        android:src="@drawable/asset"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="238dp"
+        android:src="@drawable/asset2"
+        android:layout_marginEnd="20dp"
+        android:translationY="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="57dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:src="@drawable/check_circle"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment Success!"
+            android:textSize="25sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/primary_enpy"
+            android:fontFamily="@font/bold_montserrat"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Your order was placed successfully!\nThank you for shopping with Enpy."
+            android:textSize="16sp"
+            android:fontFamily="@font/regular_montserrat"
+            android:textColor="@color/primary_enpy"
+            android:layout_marginTop="12dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_white"
+            android:text="View order"
+            android:textSize="17sp"
+            android:fontFamily="@font/semibold_montserrat"
+            android:textAllCaps="false"
+            android:textColor="@color/primary_enpy"
+            android:paddingVertical="19dp"
+            android:paddingHorizontal="42dp"
+            android:layout_marginTop="47dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="back to home"
+            android:textColor="@color/white"
+            android:fontFamily="@font/semibold_montserrat"
+            android:textSize="15sp"
+            android:layout_marginTop="12dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

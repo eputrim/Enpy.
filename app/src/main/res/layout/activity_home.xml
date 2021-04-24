@@ -62,7 +62,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:background=""
+                    android:background="@null"
                     android:fontFamily="@font/medium_montserrat"
                     android:gravity="center_vertical"
                     android:hint="Search here..."

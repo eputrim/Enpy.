@@ -22,7 +22,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/back"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginStart="20dp"
@@ -42,7 +42,7 @@
                 android:textColor="@color/primary_enpy"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/back" />
 
             <ImageView
                 android:layout_width="55dp"

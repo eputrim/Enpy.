@@ -22,7 +22,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/back"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginStart="20dp"
@@ -42,7 +42,7 @@
                 android:textColor="@color/primary_enpy"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/back" />
 
             <ImageView
                 android:layout_width="55dp"
@@ -56,13 +56,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/bg_card_white"
                 android:orientation="vertical"
-                android:layout_marginTop="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3">
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:layout_constraintVertical_bias="1.0">
 
                 <LinearLayout
                     android:id="@+id/linearLayout"
@@ -74,23 +76,24 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <androidx.cardview.widget.CardView
+                    <com.github.florent37.shapeofview.shapes.CircleView
                         android:layout_width="130dp"
                         android:layout_height="130dp"
-                        app:cardCornerRadius="250dp"
-                        android:layout_marginBottom="20dp"
                         android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="250dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
+                            android:id="@+id/image_add"
                             android:layout_width="130dp"
                             android:layout_height="130dp"
-                            android:src="@drawable/photo"
-                            android:scaleType="centerCrop"/>
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/photo" />
 
-                    </androidx.cardview.widget.CardView>
+                    </com.github.florent37.shapeofview.shapes.CircleView>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -103,6 +106,7 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/first_name"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/btn_line_pink"
@@ -125,6 +129,7 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/last_name"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/btn_line_pink"
@@ -142,11 +147,35 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="12dp"
                         android:fontFamily="@font/medium_montserrat"
+                        android:text="Username"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/username"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/btn_line_pink"
+                        android:fontFamily="@font/regular_montserrat"
+                        android:hint="Your Username"
+                        android:inputType="text"
+                        android:padding="16dp"
+                        android:textColor="@color/gray_enpy"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="12dp"
+                        android:fontFamily="@font/medium_montserrat"
                         android:text="Email"
                         android:textColor="@color/primary_enpy"
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/btn_line_pink"
@@ -169,6 +198,7 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/btn_line_pink"
@@ -191,6 +221,7 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/phone_number"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/btn_line_pink"
@@ -213,6 +244,7 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_line_pink"
@@ -227,8 +259,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="35dp"
                     android:layout_marginTop="30dp"
+                    android:layout_marginBottom="35dp"
                     android:gravity="center"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -237,7 +269,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/appCompatButton2"
+                        android:id="@+id/btn_regis"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="30dp"
@@ -254,7 +286,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/skip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -264,7 +296,7 @@
                         android:textSize="15sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/appCompatButton2" />
+                        app:layout_constraintTop_toBottomOf="@+id/btn_regis" />
                 </LinearLayout>
 
             </LinearLayout>

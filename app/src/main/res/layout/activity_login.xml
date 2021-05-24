@@ -8,7 +8,7 @@
     tools:context=".Login">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/back"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginStart="20dp"
@@ -28,7 +28,7 @@
         android:textColor="@color/primary_enpy"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/back" />
 
     <ImageView
         android:layout_width="55dp"
@@ -52,29 +52,33 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="30dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.148">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/medium_montserrat"
-                android:text="Email"
+                android:text="Username"
                 android:textColor="@color/primary_enpy"
                 android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/xusername"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/btn_line_pink"
                 android:fontFamily="@font/regular_montserrat"
-                android:hint="Your email"
-                android:inputType="textEmailAddress"
+                android:hint="Your Username"
+                android:inputType="text"
                 android:padding="16dp"
                 android:textColor="@color/gray_enpy"
                 android:textSize="15sp" />
@@ -91,6 +95,7 @@
                 android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/xpassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/btn_line_pink"
@@ -114,7 +119,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/appCompatButton2"
+                android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
@@ -131,7 +136,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/regis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "430179520417",
+    "project_id": "enpy-83353",
+    "storage_bucket": "enpy-83353.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430179520417:android:a8727c775527aef48685e0",
+        "android_client_info": {
+          "package_name": "viercimi.enpy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430179520417-erga6gie8qo5st0r2nt43cusdnoaage9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrdjZei-LxwM-WEgBRG720KaFnuXP57Bc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430179520417-erga6gie8qo5st0r2nt43cusdnoaage9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

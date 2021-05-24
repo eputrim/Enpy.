@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.order.OrderFragment" >
 
     <ScrollView
@@ -97,6 +98,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular_montserrat"
+                            android:textColor="@color/primary_enpy"
                             android:text="Mandiri"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -167,6 +169,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular_montserrat"
+                            android:textColor="@color/primary_enpy"
                             android:text="BCA"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -238,6 +241,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular_montserrat"
+                            android:textColor="@color/primary_enpy"
                             android:text="DANA"
                             android:textSize="14sp" />
                     </LinearLayout>

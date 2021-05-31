@@ -14,6 +14,6 @@
     <string name="menu_about">About</string>
     <string name="menu_logout">Logout</string>
     <string name="rp">Rp. %1$s</string>
-    <string name="rp2">Rp. %1$d</string>
     <string name="hey">Hey, %1$s</string>
+    <string name="rp2">Rp. %1$d</string>
 </resources>

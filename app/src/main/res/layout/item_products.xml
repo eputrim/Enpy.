@@ -11,8 +11,7 @@
         android:id="@+id/btn_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_flexBasisPercent="47.2%">
+        android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"

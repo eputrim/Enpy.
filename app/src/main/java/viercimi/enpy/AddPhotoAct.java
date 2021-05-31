@@ -3,17 +3,24 @@ package viercimi.enpy;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -25,10 +32,14 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.BitSet;
+
 public class AddPhotoAct extends AppCompatActivity {
 
+    private static final int CAMERA_PERM_CODE = 101;
+    private static final int CAMERA_REQUEST_CODE = 102 ;
     Button btn_add_photo;
-    ImageView pic_photo_register_user;
+    ImageView pic_photo_register_user, back;
     TextView skip;
     androidx.appcompat.widget.AppCompatButton btn_regis;
 
@@ -53,6 +64,7 @@ public class AddPhotoAct extends AppCompatActivity {
         pic_photo_register_user = findViewById(R.id.pic_photo_register_user);
         btn_regis = findViewById(R.id.btn_regis);
         skip = findViewById(R.id.skip);
+        back = findViewById(R.id.back);
 
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,11 +73,18 @@ public class AddPhotoAct extends AppCompatActivity {
                 startActivity(skip);
             }
         });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(AddPhotoAct.this, Register.class);
+                startActivity(back);
+            }
+        });
 
         btn_add_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findPhoto();
+                askCameraPermission();
             }
         });
 
@@ -119,6 +138,32 @@ public class AddPhotoAct extends AppCompatActivity {
         });
 
     }
+
+    private void askCameraPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, CAMERA_PERM_CODE);
+        } else {
+            openCamera();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == CAMERA_PERM_CODE){
+            if (grantResults.length < 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                openCamera();
+
+            }else {
+                Toast.makeText(this, "Camera Permission is Required to use camera.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void openCamera() {
+        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(camera, CAMERA_REQUEST_CODE);
+    }
+
     String getFileExtension(Uri uri){
         ContentResolver contentResolver = getContentResolver();
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
@@ -135,10 +180,14 @@ public class AddPhotoAct extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == photo_max && resultCode == RESULT_OK && data != null && data.getData() != null)
+        if (requestCode == CAMERA_REQUEST_CODE){
+            Bitmap image = (Bitmap) data.getExtras().get("data");
+            pic_photo_register_user.setImageBitmap(image);
+        }
+        else if(requestCode == photo_max && resultCode == RESULT_OK && data != null && data.getData() != null)
         {
-            photo_location = data.getData();
+
+            //photo_location = data.getData();
             Picasso.with(this).load(photo_location).centerCrop().fit().into(pic_photo_register_user);
         }
     }

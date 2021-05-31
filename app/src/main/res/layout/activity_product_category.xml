@@ -56,13 +56,13 @@
                 android:textSize="23sp" />
 
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/products_place"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clipToPadding="false"
-                    android:padding="@dimen/item_offset">
-                </androidx.recyclerview.widget.RecyclerView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/products_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:padding="@dimen/item_offset">
+            </androidx.recyclerview.widget.RecyclerView>
 
 
         </LinearLayout>

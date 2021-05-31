@@ -76,25 +76,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <com.github.florent37.shapeofview.shapes.CircleView
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="20dp"
-                        app:cardCornerRadius="250dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <ImageView
-                            android:id="@+id/image_add"
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/photo" />
-
-                    </com.github.florent37.shapeofview.shapes.CircleView>
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -114,7 +95,7 @@
                         android:hint="Your first name"
                         android:inputType="text"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
 
                     <TextView
@@ -137,7 +118,7 @@
                         android:hint="Your last name"
                         android:inputType="text"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
 
                     <TextView
@@ -160,7 +141,7 @@
                         android:hint="Your Username"
                         android:inputType="text"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
 
                     <TextView
@@ -183,7 +164,7 @@
                         android:hint="Your email"
                         android:inputType="textEmailAddress"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
 
                     <TextView
@@ -206,7 +187,7 @@
                         android:hint="Password"
                         android:inputType="textPassword"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
 
                     <TextView
@@ -229,7 +210,7 @@
                         android:hint="Your phone number"
                         android:inputType="number"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
 
                     <TextView
@@ -252,7 +233,7 @@
                         android:hint="Your address\n\n"
                         android:inputType="textMultiLine"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -276,7 +257,7 @@
                         android:background="@drawable/btn_pink"
                         android:fontFamily="@font/semibold_montserrat"
                         android:padding="16dp"
-                        android:text="Create Account"
+                        android:text="Next"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="17sp"

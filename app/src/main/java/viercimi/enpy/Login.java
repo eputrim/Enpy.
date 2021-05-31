@@ -53,46 +53,72 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //ubah button jadi loading ketika sudah di klik
+                login.setEnabled(false);
+                login.setText("Loading ...");
+
                 final String username = xusername.getText().toString();
                 final String password = xpassword.getText().toString();
-                reference = FirebaseDatabase.getInstance().getReference()
-                        .child("Users").child(username);
-                reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange( DataSnapshot snapshot) {
-                        if (snapshot.exists()){
-                            //ambil data dari firebase
-                            String passwordFromFirebase = snapshot.child("password").getValue().toString();
-                            //validasi password dgn password firebase
-                            if (password.equals(passwordFromFirebase)){
 
-                                //simpan ke local
-                                SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putString(username_key, xusername.getText().toString());
-                                editor.apply();
+                if (username.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Username empty !", Toast.LENGTH_SHORT).show();
+                    //ubah button jadi loading ketika sudah di klik
+                    login.setEnabled(true);
+                    login.setText("SIGN IN");
+                } else {
+                    if (password.isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Password empty !", Toast.LENGTH_SHORT).show();
+                        //ubah button jadi loading ketika sudah di klik
+                        login.setEnabled(true);
+                        login.setText("SIGN IN");
 
-                                //pindah activity
-                                Intent gohome = new Intent(Login.this,Home.class);
-                                startActivity(gohome);
+                }else {
+                        reference = FirebaseDatabase.getInstance().getReference()
+                                .child("Users").child(username);
+                        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange( DataSnapshot snapshot) {
+                                if (snapshot.exists()){
+                                    //ambil data dari firebase
+                                    String passwordFromFirebase = snapshot.child("password").getValue().toString();
+                                    //validasi password dgn password firebase
+                                    if (password.equals(passwordFromFirebase)){
+
+                                        //simpan ke local
+                                        SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString(username_key, xusername.getText().toString());
+                                        editor.apply();
+
+                                        //pindah activity
+                                        Intent gohome = new Intent(Login.this,Home.class);
+                                        startActivity(gohome);
+                                    }
+                                    else {
+                                        Toast.makeText(getApplicationContext(), "Wrong Password !", Toast.LENGTH_SHORT).show();
+                                        //ubah button jadi loading ketika sudah di klik
+                                        login.setEnabled(true);
+                                        login.setText("SIGN IN");
+                                    }
+
+                                }
+                                else {
+                                    Toast.makeText(getApplicationContext(), "Data Not Found !", Toast.LENGTH_SHORT).show();
+                                    //ubah button jadi loading ketika sudah di klik
+                                    login.setEnabled(true);
+                                    login.setText("SIGN IN");
+                                }
                             }
-                            else {
-                                Toast.makeText(getApplicationContext(), "Wrong Password !", Toast.LENGTH_SHORT).show();
-                            }
 
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(), "Data Not Found !", Toast.LENGTH_SHORT).show();
-                        }
+                            @Override
+                            public void onCancelled(DatabaseError error) {
+
+                            }
+                        });
                     }
 
-                    @Override
-                    public void onCancelled(DatabaseError error) {
 
-                    }
-                });
-
-
+                }
             }
         });
 

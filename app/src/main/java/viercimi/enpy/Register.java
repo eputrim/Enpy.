@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,15 +34,11 @@ import com.squareup.picasso.Picasso;
 
 public class Register extends AppCompatActivity {
     androidx.appcompat.widget.AppCompatButton btn_regis;
-    ImageView back, image_add;
+    ImageView back;
     TextView skip;
     EditText address, phone_number, password, email, last_name, first_name, username;
 
-    Uri photo_location;
-    Integer photo_max = 1;
-
     DatabaseReference reference;
-    StorageReference storage;
 
     String USERNAME_KEY = "usernamekey";
     String username_key = "";
@@ -52,14 +49,9 @@ public class Register extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_register);
 
-
-
         btn_regis = findViewById(R.id.btn_regis);
         back = findViewById(R.id.back);
         skip = findViewById(R.id.skip);
-
-        image_add = findViewById(R.id.image_add);
-
         address = findViewById(R.id.address);
         phone_number = findViewById(R.id.phone_number);
         password = findViewById(R.id.password);
@@ -67,8 +59,6 @@ public class Register extends AppCompatActivity {
         last_name = findViewById(R.id.last_name);
         first_name = findViewById(R.id.first_name);
         username = findViewById(R.id.username);
-
-
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,35 +73,97 @@ public class Register extends AppCompatActivity {
                 //ubah button jadi loading ketika sudah di klik
                 btn_regis.setEnabled(false);
                 btn_regis.setText("Loading ...");
-                //menyimpan data ke local storage
-                SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(username_key, username.getText().toString());
-                editor.apply();
 
-                //simpan ke database
-                reference = FirebaseDatabase.getInstance().getReference()
-                        .child("Users").child(username.getText().toString());
-                reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        snapshot.getRef().child("first_name").setValue(first_name.getText().toString());
-                        snapshot.getRef().child("last_name").setValue(last_name.getText().toString());
-                        snapshot.getRef().child("password").setValue(password.getText().toString());
-                        snapshot.getRef().child("email").setValue(email.getText().toString());
-                        snapshot.getRef().child("phone_number").setValue(phone_number.getText().toString());
-                        snapshot.getRef().child("address").setValue(address.getText().toString());
-                        snapshot.getRef().child("username").setValue(username.getText().toString());
+                final String xusername = username.getText().toString();
+                final String xpassword = password.getText().toString();
+                final String xlastname = last_name.getText().toString();
+                final String xfirstname = first_name.getText().toString();
+                final String xaddress = address.getText().toString();
+                final String xphonenumber = phone_number.getText().toString();
+                final String xemail = email.getText().toString();
+
+                if (xusername.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Username empty !", Toast.LENGTH_SHORT).show();
+                    //ubah button jadi loading ketika sudah di klik
+                    btn_regis.setEnabled(true);
+                    btn_regis.setText("Next");
+                }
+                else {
+                    if (xpassword.isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Password empty !", Toast.LENGTH_SHORT).show();
+                        //ubah button jadi loading ketika sudah di klik
+                        btn_regis.setEnabled(true);
+                        btn_regis.setText("Next");
+                    } else {
+                        if (xlastname.isEmpty()){
+                            Toast.makeText(getApplicationContext(), "Last Name empty !", Toast.LENGTH_SHORT).show();
+                            //ubah button jadi loading ketika sudah di klik
+                            btn_regis.setEnabled(true);
+                            btn_regis.setText("Next");
+                        }else {
+                            if (xfirstname.isEmpty()){
+                                Toast.makeText(getApplicationContext(), "First Name empty !", Toast.LENGTH_SHORT).show();
+                                //ubah button jadi loading ketika sudah di klik
+                                btn_regis.setEnabled(true);
+                                btn_regis.setText("Next");
+                            }else {
+                                if (xemail.isEmpty()){
+                                    Toast.makeText(getApplicationContext(), "Email empty !", Toast.LENGTH_SHORT).show();
+                                    //ubah button jadi loading ketika sudah di klik
+                                    btn_regis.setEnabled(true);
+                                    btn_regis.setText("Next");
+                                }else {
+                                    if (xaddress.isEmpty()){
+                                        Toast.makeText(getApplicationContext(), "Address empty !", Toast.LENGTH_SHORT).show();
+                                        //ubah button jadi loading ketika sudah di klik
+                                        btn_regis.setEnabled(true);
+                                        btn_regis.setText("Next");
+                                    }else {
+                                        if (xphonenumber.isEmpty()){
+                                            Toast.makeText(getApplicationContext(), "Phone number empty !", Toast.LENGTH_SHORT).show();
+                                            //ubah button jadi loading ketika sudah di klik
+                                            btn_regis.setEnabled(true);
+                                            btn_regis.setText("Next");
+                                        }else {
+                                            //menyimpan data ke local storage
+                                            SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                                            editor.putString(username_key, username.getText().toString());
+                                            editor.apply();
+
+
+                                            //simpan ke database
+                                            reference = FirebaseDatabase.getInstance().getReference()
+                                                    .child("Users").child(username.getText().toString());
+                                            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                    snapshot.getRef().child("first_name").setValue(first_name.getText().toString());
+                                                    snapshot.getRef().child("last_name").setValue(last_name.getText().toString());
+                                                    snapshot.getRef().child("password").setValue(password.getText().toString());
+                                                    snapshot.getRef().child("email").setValue(email.getText().toString());
+                                                    snapshot.getRef().child("phone_number").setValue(phone_number.getText().toString());
+                                                    snapshot.getRef().child("address").setValue(address.getText().toString());
+                                                    snapshot.getRef().child("username").setValue(username.getText().toString());
+                                                }
+
+                                                @Override
+                                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                                }
+                                            });
+                                            //pindah activity
+                                            Intent register = new Intent(Register.this,AddPhotoAct.class);
+                                            startActivity(register);
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
+                }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                //pindah activity
-                Intent register = new Intent(Register.this,AddPhotoAct.class);
-                startActivity(register);
             }
         });
 

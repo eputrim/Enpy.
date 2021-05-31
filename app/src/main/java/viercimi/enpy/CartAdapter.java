@@ -37,12 +37,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Glide.with(context).load(myCart.get(position).getUrl_photo_product()).override(200, 200).into(holder.xurl_photo_product);
+        Glide.with(context).load(myCart.get(position).getUrl_photo_product()).into(holder.xurl_photo_product);
+
         holder.xproduct_name.setText(myCart.get(position).getProduct_name());
         holder.xsize.setText(myCart.get(position).getSize());
-        holder.xcolor.setBackgroundColor(Color.parseColor(myCart.get(position).getColor()));
         holder.xprice.setText(context.getResources().getString(R.string.rp,  myCart.get(position).getPrice()));
         holder.xquantity.setText(myCart.get(position).getQuantity());
+        holder.xcolor.setBackgroundColor(Color.parseColor(myCart.get(position).getColor()));
 
         String getCart_id = myCart.get(position).getKey();
 /*

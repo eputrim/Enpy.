@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="viercimi.enpy">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".AddPhotoAct"></activity>
+        <activity android:name=".Order"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".About" />
+        <activity android:name=".AddPhotoAct" />
         <activity android:name=".SuccessPayment" />
         <activity android:name=".Payment" />
         <activity android:name=".Cart" />
         <activity android:name=".ProductDetail" />
         <activity android:name=".ProductCategory" />
         <activity android:name=".EditProfile" />
-        <activity
-            android:name=".Menu"
-            android:label="@string/title_activity_menu"
-            android:theme="@style/Theme.Enpy.NoActionBar" />
         <activity android:name=".Home" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />

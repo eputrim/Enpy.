@@ -109,7 +109,7 @@
                         android:fontFamily="@font/regular_montserrat"
                         android:inputType="text"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
 
                     <TextView
@@ -130,7 +130,7 @@
                         android:fontFamily="@font/regular_montserrat"
                         android:inputType="text"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
 
                     <TextView
@@ -151,7 +151,7 @@
                         android:fontFamily="@font/regular_montserrat"
                         android:inputType="textEmailAddress"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp"
                         android:focusable="false" />
 
@@ -173,7 +173,7 @@
                         android:fontFamily="@font/regular_montserrat"
                         android:inputType="textPassword"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
 
                     <TextView
@@ -215,7 +215,7 @@
                         android:fontFamily="@font/regular_montserrat"
                         android:inputType="textMultiLine"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
                 </LinearLayout>
 

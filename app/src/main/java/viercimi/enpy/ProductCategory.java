@@ -74,7 +74,7 @@ public class ProductCategory extends AppCompatActivity {
         reference_categories.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                category_name.setText(category_id);
+               category_name.setText(category_id);
                 for(DataSnapshot dataSnapshot1: snapshot.getChildren()){
                     MyProducts p = dataSnapshot1.getValue(MyProducts.class);
                     p.key = dataSnapshot1.getKey();

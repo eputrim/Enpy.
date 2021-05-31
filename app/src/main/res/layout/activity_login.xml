@@ -80,7 +80,7 @@
                 android:hint="Your Username"
                 android:inputType="text"
                 android:padding="16dp"
-                android:textColor="@color/gray_enpy"
+                android:textColor="@color/primary_enpy"
                 android:textSize="15sp" />
 
             <TextView
@@ -103,7 +103,7 @@
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="16dp"
-                android:textColor="@color/gray_enpy"
+                android:textColor="@color/primary_enpy"
                 android:textSize="15sp" />
         </LinearLayout>
 

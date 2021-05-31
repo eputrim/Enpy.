@@ -1,15 +1,26 @@
 package viercimi.enpy;
 
-public class MySizeColor {
+import java.io.Serializable;
+
+public class MySize implements Serializable {
     public String key;
     String chart;
+    private boolean isChecked = false;
 
-    public MySizeColor() {
+    public MySize() {
     }
 
-    public MySizeColor(String key, String chart) {
+    public MySize(String key, String chart) {
         this.key = key;
         this.chart = chart;
+    }
+
+    public boolean isChecked(){
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked){
+        isChecked = checked;
     }
 
     public String getChart() {

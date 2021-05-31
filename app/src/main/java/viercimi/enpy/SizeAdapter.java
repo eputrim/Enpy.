@@ -13,13 +13,20 @@ import java.util.ArrayList;
 
 public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.MyViewHolder> {
 
-    boolean isclick = false;
     Context context;
-    ArrayList<MySizeColor> mySize;
+    ArrayList<MySize> mySize;
 
-    public SizeAdapter(Context c, ArrayList<MySizeColor> p){
+    private int checkedPosition = 0;
+
+    public SizeAdapter(Context c, ArrayList<MySize> p){
         context = c;
         mySize = p;
+    }
+
+    public void setSize(ArrayList<MySize> size){
+        mySize = new ArrayList<>();
+        mySize = size;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -30,23 +37,8 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+        holder.bind(mySize.get(position));
         holder.xsize.setText(mySize.get(position).getChart());
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(isclick) {
-                    holder.xsize.setBackgroundColor(context.getResources().getColor(R.color.pink_enpy));
-                    isclick = false;
-                } else {
-                    holder.xsize.setBackgroundColor(context.getResources().getColor(R.color.lightgray_enpy));
-                    isclick = true;
-                }
-
-            }
-        });
-
     }
 
     @Override
@@ -63,6 +55,36 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.MyViewHolder> 
 
             xsize = itemView.findViewById(R.id.xsize);
         }
+
+        void bind(final MySize size){
+            if(checkedPosition == -1){
+                xsize.setBackgroundColor(context.getResources().getColor(R.color.lightgray_enpy));
+            } else {
+                if(checkedPosition == getAdapterPosition()){
+                    xsize.setBackgroundColor(context.getResources().getColor(R.color.pink_enpy));
+                } else {
+                    xsize.setBackgroundColor(context.getResources().getColor(R.color.lightgray_enpy));
+                }
+            }
+
+            xsize.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    xsize.setBackgroundColor(context.getResources().getColor(R.color.pink_enpy));
+                    if(checkedPosition != getAdapterPosition()){
+                        notifyItemChanged(checkedPosition);
+                        checkedPosition = getAdapterPosition();
+                    }
+                }
+            });
+        }
+    }
+
+    public MySize getSelected() {
+        if(checkedPosition != -1){
+            return mySize.get(checkedPosition);
+        }
+        return null;
     }
 
 }

@@ -16,12 +16,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<MyProducts> myProducts;
+
+    Locale localeID = new Locale("in", "ID");
+    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
     public ProductsAdapter(Context c, ArrayList<MyProducts> p){
         context = c;
@@ -37,8 +42,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.xproduct_name.setText(myProducts.get(position).getProduct_name());
-        holder.xprice.setText(context.getResources().getString(R.string.rp,  myProducts.get(position).getPrice()));
-
+        holder.xprice.setText(formatRupiah.format(Integer.parseInt(myProducts.get(position).getPrice())));
         Glide.with(context).load(myProducts.get(position).getUrl_photo_product()).into(holder.xurl_photo_product);
 
         String getProduct_id = myProducts.get(position).getKey();

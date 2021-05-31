@@ -18,7 +18,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Cart extends AppCompatActivity {
 
@@ -36,6 +38,9 @@ public class Cart extends AppCompatActivity {
 
     ArrayList<MyCart> list_cart;
     CartAdapter cartAdapter;
+
+    Locale localeID = new Locale("in", "ID");
+    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +86,7 @@ public class Cart extends AppCompatActivity {
                 }
                 cartAdapter = new CartAdapter(Cart.this, list_cart);
                 cart_place.setAdapter(cartAdapter);
-                cart_total.setText(getResources().getString(R.string.rp2, total_harga));
+                cart_total.setText(formatRupiah.format(total_harga));
             }
 
             @Override

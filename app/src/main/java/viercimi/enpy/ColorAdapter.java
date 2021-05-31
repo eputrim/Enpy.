@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,13 +14,20 @@ import java.util.ArrayList;
 
 public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.MyViewHolder> {
 
-    boolean isclick = false;
     Context context;
-    ArrayList<MySizeColor> myColor;
+    ArrayList<MyColor> myColor;
 
-    public ColorAdapter(Context c, ArrayList<MySizeColor> p){
+    private int checkedPosition = 0;
+
+    public ColorAdapter(Context c, ArrayList<MyColor> p){
         context = c;
         myColor = p;
+    }
+
+    public void setColor(ArrayList<MyColor> color){
+        myColor = new ArrayList<>();
+        myColor = color;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -34,22 +39,8 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
+        holder.bind(myColor.get(position));
         holder.xcolor.setBackgroundColor(Color.parseColor(myColor.get(position).getChart()));
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(isclick) {
-                    holder.xcolor.setImageDrawable(context.getResources().getDrawable(R.drawable.check, context.getTheme()));
-                    isclick = false;
-                } else {
-                    holder.xcolor.setImageResource(android.R.color.transparent);
-                    isclick = true;
-                }
-
-            }
-        });
-
     }
 
     @Override
@@ -66,6 +57,36 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.MyViewHolder
 
             xcolor = itemView.findViewById(R.id.xcolor);
         }
+
+        void bind(final MyColor color){
+            if(checkedPosition == -1){
+                xcolor.setImageResource(android.R.color.transparent);
+            } else {
+                if(checkedPosition == getAdapterPosition()){
+                    xcolor.setImageDrawable(context.getResources().getDrawable(R.drawable.check, context.getTheme()));
+                } else {
+                    xcolor.setImageResource(android.R.color.transparent);
+                }
+            }
+
+            xcolor.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    xcolor.setImageDrawable(context.getResources().getDrawable(R.drawable.check, context.getTheme()));
+                    if(checkedPosition != getAdapterPosition()){
+                        notifyItemChanged(checkedPosition);
+                        checkedPosition = getAdapterPosition();
+                    }
+                }
+            });
+        }
+    }
+
+    public MyColor getSelected() {
+        if(checkedPosition != -1){
+            return myColor.get(checkedPosition);
+        }
+        return null;
     }
 
 }

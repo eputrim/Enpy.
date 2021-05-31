@@ -17,12 +17,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<MyCart> myCart;
+
+    Locale localeID = new Locale("in", "ID");
+    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
     public CartAdapter(Context c, ArrayList<MyCart> p){
         context = c;
@@ -41,7 +46,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
         holder.xproduct_name.setText(myCart.get(position).getProduct_name());
         holder.xsize.setText(myCart.get(position).getSize());
-        holder.xprice.setText(context.getResources().getString(R.string.rp,  myCart.get(position).getPrice()));
+        holder.xprice.setText(formatRupiah.format(Integer.parseInt(myCart.get(position).getPrice())));
         holder.xquantity.setText(myCart.get(position).getQuantity());
         holder.xcolor.setBackgroundColor(Color.parseColor(myCart.get(position).getColor()));
 

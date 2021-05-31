@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class SuccessPayment extends AppCompatActivity {
     ImageView success;
-    androidx.appcompat.widget.AppCompatButton order;
+    androidx.appcompat.widget.AppCompatButton vieworder;
     TextView btn_back, app_title, app_subtitle;
     Animation btt, ttb, app_splash;
 
@@ -24,7 +24,7 @@ public class SuccessPayment extends AppCompatActivity {
         btn_back = findViewById(R.id.btn_back);
         app_title = findViewById(R.id.app_title);
         app_subtitle = findViewById(R.id.app_subtitle);
-        order = findViewById(R.id.order);
+        vieworder = findViewById(R.id.vieworder);
         success = findViewById(R.id.success);
 
         //load animation
@@ -36,7 +36,7 @@ public class SuccessPayment extends AppCompatActivity {
         success.startAnimation(app_splash);
         app_title.startAnimation(ttb);
         app_subtitle.startAnimation(ttb);
-        order.startAnimation(btt);
+        vieworder.startAnimation(btt);
         btn_back.startAnimation(btt);
 
         btn_back.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +44,14 @@ public class SuccessPayment extends AppCompatActivity {
             public void onClick(View v) {
                 Intent home = new Intent(SuccessPayment.this,Home.class);
                 startActivity(home);
+            }
+        });
+
+        vieworder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent order = new Intent(SuccessPayment.this, Order.class);
+                startActivity(order);
             }
         });
     }

@@ -54,12 +54,25 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center">
-            <ImageView
-                android:id="@+id/url_photo_profile"
+            <com.github.florent37.shapeofview.shapes.CircleView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:background="@drawable/photo"
-                android:layout_marginHorizontal="15dp"/>
+                android:layout_gravity="center"
+                app:cardCornerRadius="250dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/url_photo_profile"
+                    android:layout_gravity="center"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/photo" />
+
+            </com.github.florent37.shapeofview.shapes.CircleView>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +82,7 @@
                     android:id="@+id/username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="erika putrim"
                     android:textSize="21sp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/medium_montserrat" />
@@ -77,7 +90,7 @@
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="eputrim@gmail.com"
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/regular_montserrat"/>

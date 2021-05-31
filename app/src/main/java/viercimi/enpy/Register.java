@@ -38,7 +38,7 @@ public class Register extends AppCompatActivity {
     TextView skip;
     EditText address, phone_number, password, email, last_name, first_name, username;
 
-    DatabaseReference reference;
+    DatabaseReference reference, reference_username;
 
     String USERNAME_KEY = "usernamekey";
     String username_key = "";
@@ -73,6 +73,7 @@ public class Register extends AppCompatActivity {
                 //ubah button jadi loading ketika sudah di klik
                 btn_regis.setEnabled(false);
                 btn_regis.setText("Loading ...");
+
 
                 final String xusername = username.getText().toString();
                 final String xpassword = password.getText().toString();
@@ -125,26 +126,52 @@ public class Register extends AppCompatActivity {
                                             btn_regis.setEnabled(true);
                                             btn_regis.setText("Next");
                                         }else {
-                                            //menyimpan data ke local storage
-                                            SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-                                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                                            editor.putString(username_key, username.getText().toString());
-                                            editor.apply();
-
-
-                                            //simpan ke database
-                                            reference = FirebaseDatabase.getInstance().getReference()
-                                                    .child("Users").child(username.getText().toString());
-                                            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                            // mengambil username pada firebase database
+                                            reference_username = FirebaseDatabase.getInstance().getReference().child("Users")
+                                                    .child(username.getText().toString());
+                                            reference_username.addListenerForSingleValueEvent(new ValueEventListener() {
                                                 @Override
                                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                    snapshot.getRef().child("first_name").setValue(first_name.getText().toString());
-                                                    snapshot.getRef().child("last_name").setValue(last_name.getText().toString());
-                                                    snapshot.getRef().child("password").setValue(password.getText().toString());
-                                                    snapshot.getRef().child("email").setValue(email.getText().toString());
-                                                    snapshot.getRef().child("phone_number").setValue(phone_number.getText().toString());
-                                                    snapshot.getRef().child("address").setValue(address.getText().toString());
-                                                    snapshot.getRef().child("username").setValue(username.getText().toString());
+                                                    //jika username tersedia
+                                                    if (snapshot.exists()) {
+                                                        Toast.makeText(getApplicationContext(), "Username is exist !", Toast.LENGTH_SHORT).show();
+                                                        //ubah button jadi aktif
+                                                        btn_regis.setEnabled(true);
+                                                        btn_regis.setText("Next");
+                                                    } else {
+                                                        //menyimpan data ke local storage
+                                                        SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                        editor.putString(username_key, username.getText().toString());
+                                                        editor.apply();
+
+
+                                                        //simpan ke database
+                                                        reference = FirebaseDatabase.getInstance().getReference()
+                                                                .child("Users").child(username.getText().toString());
+                                                        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                            @Override
+                                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                                snapshot.getRef().child("first_name").setValue(first_name.getText().toString());
+                                                                snapshot.getRef().child("last_name").setValue(last_name.getText().toString());
+                                                                snapshot.getRef().child("password").setValue(password.getText().toString());
+                                                                snapshot.getRef().child("email").setValue(email.getText().toString());
+                                                                snapshot.getRef().child("phone_number").setValue(phone_number.getText().toString());
+                                                                snapshot.getRef().child("address").setValue(address.getText().toString());
+                                                                snapshot.getRef().child("username").setValue(username.getText().toString());
+                                                            }
+
+                                                            @Override
+                                                            public void onCancelled(@NonNull DatabaseError error) {
+
+                                                            }
+                                                        });
+                                                        //pindah activity
+                                                        Intent register = new Intent(Register.this, AddPhotoAct.class);
+                                                        startActivity(register);
+
+
+                                                    }
                                                 }
 
                                                 @Override
@@ -152,10 +179,6 @@ public class Register extends AppCompatActivity {
 
                                                 }
                                             });
-                                            //pindah activity
-                                            Intent register = new Intent(Register.this,AddPhotoAct.class);
-                                            startActivity(register);
-
                                         }
                                     }
                                 }

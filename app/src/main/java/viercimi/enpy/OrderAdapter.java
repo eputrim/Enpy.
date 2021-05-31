@@ -26,9 +26,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
     Context context;
     ArrayList<MyOrder> myOrder;
 
-    Locale localeID = new Locale("in", "ID");
-    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
-
     public OrderAdapter(Context c, ArrayList<MyOrder> p){
         context = c;
         myOrder = p;
@@ -42,7 +39,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.xtotal.setText(formatRupiah.format(Integer.parseInt(myOrder.get(position).getTotal())));
+        holder.xtotal.setText(myOrder.get(position).getTotal());
         holder.xdate.setText(myOrder.get(position).getDate());
         holder.xpayment.setText(myOrder.get(position).getPayment());
     }

@@ -82,16 +82,14 @@
                     android:id="@+id/username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="erika putrim"
-                    android:textSize="21sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/medium_montserrat" />
                 <TextView
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="eputrim@gmail.com"
-                    android:textSize="17sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/regular_montserrat"/>
             </LinearLayout>
@@ -113,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:text="Phone Number"
                     android:fontFamily="@font/medium_montserrat"
-                    android:textSize="17sp"
+                    android:textSize="13sp"
                     android:textColor="@color/black"/>
                 <View
                     android:layout_width="0dp"
@@ -127,9 +125,8 @@
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
                     android:fontFamily="@font/regular_montserrat"
-                    android:text="+62 123456789"
                     android:textColor="@color/primary_enpy"
-                    android:textSize="15sp" />
+                    android:textSize="13sp" />
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
@@ -147,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:text="Address"
                     android:fontFamily="@font/medium_montserrat"
-                    android:textSize="17sp"
+                    android:textSize="13sp"
                     android:textColor="@color/black"/>
                 <View
                     android:layout_width="0dp"
@@ -164,7 +161,7 @@
                     android:fontFamily="@font/regular_montserrat"
                     android:text=""
                     android:textColor="@color/primary_enpy"
-                    android:textSize="15sp" />
+                    android:textSize="13sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -178,7 +175,7 @@
             android:fontFamily="@font/bold_montserrat"
             android:textColor="@color/white"
             android:padding="15dp"
-            android:textSize="17sp"/>
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <RelativeLayout

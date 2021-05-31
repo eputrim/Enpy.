@@ -51,7 +51,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold_montserrat"
-                android:text="Blouse &amp; Shirt"
                 android:textColor="@color/primary_enpy"
                 android:textSize="23sp" />
 

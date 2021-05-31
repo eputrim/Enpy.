@@ -14,7 +14,6 @@
         android:fontFamily="@font/semibold_montserrat"
         android:stateListAnimator="@null"
         android:textAllCaps="false"
-        android:text="adsd"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="14sp" />

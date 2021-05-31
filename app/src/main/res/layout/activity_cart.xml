@@ -47,7 +47,7 @@
                 android:fontFamily="@font/semibold_montserrat"
                 android:text="Total"
                 android:textColor="@color/darkgray_color"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -57,9 +57,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/semibold_montserrat"
-                android:text="Rp 390.000"
                 android:textColor="@color/primary_enpy"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -72,7 +71,7 @@
             android:text="Check out"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="17sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 

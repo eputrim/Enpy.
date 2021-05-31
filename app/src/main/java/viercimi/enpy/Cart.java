@@ -84,7 +84,7 @@ public class Cart extends AppCompatActivity {
                     p.key = dataSnapshot1.getKey();
                     list_cart.add(p);
                 }
-                cartAdapter = new CartAdapter(Cart.this, list_cart);
+                cartAdapter = new CartAdapter(Cart.this, list_cart, reference_cart);
                 cart_place.setAdapter(cartAdapter);
                 cart_total.setText(formatRupiah.format(total_harga));
             }

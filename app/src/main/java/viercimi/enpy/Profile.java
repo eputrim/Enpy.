@@ -55,7 +55,7 @@ public class Profile extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //final String xphone = snapshot.child("phone_number").getValue().toString();
                 username.setText(snapshot.child("username").getValue().toString());
-                //phone_number.setText(snapshot.child("phone_number").getValue().toString();
+                phone_number.setText(snapshot.child("phone_number").getValue().toString());
                 email.setText(snapshot.child("email").getValue().toString());
                 address.setText(snapshot.child("address").getValue().toString());
                 Picasso.with(Profile.this).load(snapshot.child("url_photo_profile").getValue()

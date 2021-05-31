@@ -85,12 +85,26 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
+                            android:id="@+id/url_photo_profile"
                             android:layout_width="130dp"
                             android:layout_height="130dp"
                             android:src="@drawable/photo"
                             android:scaleType="centerCrop"/>
 
                     </androidx.cardview.widget.CardView>
+                    <Button
+                        android:id="@+id/btn_add_new_photo"
+                        android:layout_width="144dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/bg_btn_plus"
+                        android:fontFamily="@font/regular_montserrat"
+                        android:text="Add Photo"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -103,6 +117,7 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/xfirst_name"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/btn_line_pink"
@@ -124,6 +139,7 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/xlast_name"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/btn_line_pink"
@@ -140,20 +156,41 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="12dp"
                         android:fontFamily="@font/medium_montserrat"
-                        android:text="Email"
+                        android:text="Username"
                         android:textColor="@color/primary_enpy"
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/xusername"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:background="@drawable/btn_line_pink_disable"
+                        android:background="@drawable/btn_line_pink"
                         android:fontFamily="@font/regular_montserrat"
-                        android:inputType="textEmailAddress"
+                        android:inputType="text"
                         android:padding="16dp"
                         android:textColor="@color/primary_enpy"
-                        android:textSize="15sp"
-                        android:focusable="false" />
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="12dp"
+                        android:fontFamily="@font/medium_montserrat"
+                        android:text="Email"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="17sp" />
+
+                    <EditText
+                        android:id="@+id/xemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/btn_line_pink"
+                        android:fontFamily="@font/regular_montserrat"
+                        android:inputType="text"
+                        android:padding="16dp"
+                        android:textColor="@color/primary_enpy"
+                        android:textSize="15sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -167,11 +204,12 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/xpassword"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/btn_line_pink"
                         android:fontFamily="@font/regular_montserrat"
-                        android:inputType="textPassword"
+                        android:inputType="text"
                         android:padding="16dp"
                         android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
@@ -188,13 +226,14 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/xphone_number"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/btn_line_pink"
                         android:fontFamily="@font/regular_montserrat"
                         android:inputType="number"
                         android:padding="16dp"
-                        android:textColor="@color/gray_enpy"
+                        android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
 
                     <TextView
@@ -209,18 +248,19 @@
                         android:textSize="17sp" />
 
                     <EditText
+                        android:id="@+id/xaddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_line_pink"
                         android:fontFamily="@font/regular_montserrat"
-                        android:inputType="textMultiLine"
+                        android:inputType="text"
                         android:padding="16dp"
                         android:textColor="@color/primary_enpy"
                         android:textSize="15sp" />
                 </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/appCompatButton2"
+                    android:id="@+id/btn_save"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_pink"

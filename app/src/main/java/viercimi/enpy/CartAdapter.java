@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.text.NumberFormat;
@@ -25,13 +27,15 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
     Context context;
     ArrayList<MyCart> myCart;
+    DatabaseReference ref_cart;
 
     Locale localeID = new Locale("in", "ID");
     NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
-    public CartAdapter(Context c, ArrayList<MyCart> p){
+    public CartAdapter(Context c, ArrayList<MyCart> p, DatabaseReference reference_cart){
         context = c;
         myCart = p;
+        ref_cart = reference_cart;
     }
 
     @NonNull
@@ -51,6 +55,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
         holder.xcolor.setBackgroundColor(Color.parseColor(myCart.get(position).getColor()));
 
         String getCart_id = myCart.get(position).getKey();
+
+        holder.xtrash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ref_cart.child(getCart_id).removeValue();
+                myCart.remove(position);
+                notifyItemRemoved(position);
+                notifyItemRangeChanged(position, myCart.size());
+            }
+        });
+
 /*
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +86,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView xurl_photo_product, xcolor;
+        ImageView xurl_photo_product, xcolor, xtrash;
         TextView xproduct_name, xsize, xprice, xquantity;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -79,6 +94,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
             xurl_photo_product = itemView.findViewById(R.id.xurl_photo_product);
             xcolor = itemView.findViewById(R.id.xcolor);
+            xtrash = itemView.findViewById(R.id.xtrash);
             xproduct_name = itemView.findViewById(R.id.xproduct_name);
             xsize = itemView.findViewById(R.id.xsize);
             xprice = itemView.findViewById(R.id.xprice);

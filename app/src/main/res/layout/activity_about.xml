@@ -87,7 +87,7 @@
                     android:fontFamily="@font/bold_montserrat"
                     android:text="Enpy."
                     android:textColor="@color/primary_enpy"
-                    android:textSize="53sp" />
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -96,7 +96,7 @@
                     android:fontFamily="@font/semibold_montserrat"
                     android:text="Enhance Your Personality"
                     android:textColor="@color/primary_enpy"
-                    android:textSize="19sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -107,7 +107,7 @@
                     android:lineSpacingExtra="6dp"
                     android:text="Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed posuere egestas nunc ut tempus. Fusce sagittis bibendum est. Pellentesque eu tortor euismod, varius odio ac, auctor arcu. Nam mauris neque, dictum ac velit ut, ultricies efficitur sapien.\nVestibulum in velit in elit pharetra commodo ac vel justo. Nulla facilisi. Praesent aliquet lorem dolor, vitae sodales felis sodales eu. Aenean semper mi vitae urna luctus, luctus auctor lacus eleifend. "
                     android:textColor="@color/primary_enpy"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -122,6 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
                     android:fontFamily="@font/regular_montserrat"
                     android:lineSpacingExtra="10dp"
                     android:text="Queen Virginia Jeanifer T. \nErika Putrim \nYohana Cindy Elsanjaya \nMichelle Shiela H."

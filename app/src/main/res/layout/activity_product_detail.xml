@@ -27,7 +27,6 @@
                 android:id="@+id/product_image"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:src="@drawable/hammy_blouse_kotak"
                 app:layout_constraintDimensionRatio="W,1:1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -74,9 +73,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/semibold_montserrat"
-                        android:text="Hammy Blouse"
                         android:textColor="@color/primary_enpy"
-                        android:textSize="19sp" />
+                        android:textSize="16sp" />
 
                     <View
                         android:layout_width="0dp"
@@ -88,9 +86,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/semibold_montserrat"
-                        android:text="Rp 150.000"
                         android:textColor="@color/pink_enpy"
-                        android:textSize="19sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <TextView
@@ -99,9 +96,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:fontFamily="@font/regular_montserrat"
-                    android:text="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
                     android:textColor="@color/primary_enpy"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -110,7 +106,7 @@
                     android:fontFamily="@font/medium_montserrat"
                     android:text="Size"
                     android:textColor="@color/primary_enpy"
-                    android:textSize="17sp" />
+                    android:textSize="15sp" />
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -140,7 +136,7 @@
                     android:fontFamily="@font/medium_montserrat"
                     android:text="Colors"
                     android:textColor="@color/primary_enpy"
-                    android:textSize="17sp" />
+                    android:textSize="15sp" />
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -170,7 +166,7 @@
                     android:fontFamily="@font/medium_montserrat"
                     android:text="Quantity"
                     android:textColor="@color/primary_enpy"
-                    android:textSize="17sp" />
+                    android:textSize="15sp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"

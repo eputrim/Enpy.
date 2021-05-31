@@ -34,16 +34,15 @@
                     android:fontFamily="@font/medium_montserrat"
                     android:text="Total: "
                     android:textColor="@color/primary_enpy"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/xtotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/medium_montserrat"
-                    android:text="410.000"
                     android:textColor="@color/primary_enpy"
-                    android:textSize="16sp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <TextView
@@ -51,9 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular_montserrat"
-                android:text="Mandiri"
                 android:textColor="@color/primary_enpy"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,9 +71,8 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:fontFamily="@font/regular_montserrat"
-                android:text="20 Mar 2021"
                 android:textColor="@color/black"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
         </LinearLayout>
     </LinearLayout>
 

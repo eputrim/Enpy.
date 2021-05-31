@@ -27,12 +27,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <ImageView
             android:id="@+id/cart"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="290dp"
             android:onClick="ClickCart"
             android:src="@drawable/cart_icon"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="50dp"
-        android:paddingTop="40dp"
+        android:paddingTop="30dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,8 +139,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/products_place"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:layout_height="260dp"
                 android:clipToPadding="false"
                 android:padding="@dimen/item_offset" />
         </LinearLayout>

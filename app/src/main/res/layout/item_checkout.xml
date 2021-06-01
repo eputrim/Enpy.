@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp">
+        <TextView
+            android:id="@+id/xproduct_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hammy Blouse"
+            android:fontFamily="@font/regular_montserrat"
+            android:textColor="@color/primary_enpy"
+            android:textSize="14sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" x "
+            android:fontFamily="@font/regular_montserrat"
+            android:textColor="@color/primary_enpy"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/xquantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:fontFamily="@font/regular_montserrat"
+            android:textColor="@color/primary_enpy"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</LinearLayout>

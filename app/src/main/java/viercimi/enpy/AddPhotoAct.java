@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
 import android.Manifest;
 import android.content.ContentResolver;
@@ -32,14 +33,16 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-import java.util.BitSet;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
+
+import java.io.File;
+import java.io.IOException;
 
 public class AddPhotoAct extends AppCompatActivity {
 
-    private static final int CAMERA_PERM_CODE = 101;
-    private static final int CAMERA_REQUEST_CODE = 102 ;
-    Button btn_add_photo;
-    ImageView pic_photo_register_user, back;
+    Button btn_add_photo, btn_gallery;
+    ImageView pic_photo_register_user;
     TextView skip;
     androidx.appcompat.widget.AppCompatButton btn_regis;
 
@@ -53,6 +56,9 @@ public class AddPhotoAct extends AppCompatActivity {
     String username_key = "";
     String username_key_new = "";
 
+    private static final int CAMERA_REQUEST_CODE=1;
+    public static final int CAMERA_PERM_CODE = 101;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,10 +67,10 @@ public class AddPhotoAct extends AppCompatActivity {
         getUsernameLocal();
 
         btn_add_photo = findViewById(R.id.btn_add_photo);
+        btn_gallery = findViewById(R.id.btn_gallery);
         pic_photo_register_user = findViewById(R.id.pic_photo_register_user);
         btn_regis = findViewById(R.id.btn_regis);
         skip = findViewById(R.id.skip);
-        back = findViewById(R.id.back);
 
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,18 +79,24 @@ public class AddPhotoAct extends AppCompatActivity {
                 startActivity(skip);
             }
         });
-        back.setOnClickListener(new View.OnClickListener() {
+
+        btn_gallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back = new Intent(AddPhotoAct.this, Register.class);
-                startActivity(back);
+                findPhoto();
             }
         });
 
         btn_add_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                askCameraPermission();
+                askCameraPermissions();
+
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(intent, CAMERA_REQUEST_CODE);
+                }
             }
         });
 
@@ -139,30 +151,8 @@ public class AddPhotoAct extends AppCompatActivity {
 
     }
 
-    private void askCameraPermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, CAMERA_PERM_CODE);
-        } else {
-            openCamera();
-        }
-    }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == CAMERA_PERM_CODE){
-            if (grantResults.length < 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                openCamera();
 
-            }else {
-                Toast.makeText(this, "Camera Permission is Required to use camera.", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    private void openCamera() {
-        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(camera, CAMERA_REQUEST_CODE);
-    }
 
     String getFileExtension(Uri uri){
         ContentResolver contentResolver = getContentResolver();
@@ -180,20 +170,50 @@ public class AddPhotoAct extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CAMERA_REQUEST_CODE){
-            Bitmap image = (Bitmap) data.getExtras().get("data");
-            pic_photo_register_user.setImageBitmap(image);
-        }
-        else if(requestCode == photo_max && resultCode == RESULT_OK && data != null && data.getData() != null)
-        {
 
-            //photo_location = data.getData();
+        if(requestCode == photo_max && resultCode == RESULT_OK && data != null && data.getData() != null)
+        {
+            photo_location = data.getData();
             Picasso.with(this).load(photo_location).centerCrop().fit().into(pic_photo_register_user);
         }
+
+        if(requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK)
+        {
+            photo_location = data.getData();
+            Picasso.with(this).load(photo_location).centerCrop().fit().into(pic_photo_register_user);
+            pic_photo_register_user.setImageURI(photo_location);
+
+            CropImage.activity(photo_location)
+                    .setGuidelines(CropImageView.Guidelines.ON)
+                    .setAspectRatio(1,1)
+                    .start(this);
+        }
+
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+                Uri resultUri = result.getUri();
+
+                pic_photo_register_user.setImageURI(resultUri);
+                photo_location = resultUri;
+
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                Exception error = result.getError();
+            }
+        }
+
     }
 
     public void getUsernameLocal(){
         SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
         username_key_new = sharedPreferences.getString(username_key, "");
     }
+
+    private void askCameraPermissions() {
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.CAMERA}, CAMERA_REQUEST_CODE);
+        }
+
+    }
+
 }

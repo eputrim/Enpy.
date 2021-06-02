@@ -145,6 +145,7 @@ public class Payment extends AppCompatActivity {
                             reference_order.child("total").setValue(harga_akhir.toString());
                         }
 
+
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pink_enpy"
-    tools:context=".Register">
+    tools:context=".AddPhotoAct">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -100,18 +100,31 @@
 
                     <Button
                         android:id="@+id/btn_add_photo"
-                        android:layout_width="144dp"
+                        android:layout_width="150dp"
                         android:layout_height="35dp"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/bg_btn_plus"
                         android:fontFamily="@font/regular_montserrat"
-                        android:text="Add Photo"
+                        android:text="Camera"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="15sp" />
-
+                    <Button
+                        android:id="@+id/btn_gallery"
+                        android:layout_width="150dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@drawable/bg_btn_plus"
+                        android:fontFamily="@font/regular_montserrat"
+                        android:text="Gallery"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 

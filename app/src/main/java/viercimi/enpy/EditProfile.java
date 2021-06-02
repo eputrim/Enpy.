@@ -14,6 +14,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -131,6 +132,7 @@ public class EditProfile extends AppCompatActivity {
                                     }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Uri> task) {
+                                            //Toast.makeText(getApplicationContext(), "Pindah !", Toast.LENGTH_SHORT).show();
                                             // berpindah activity
                                             Intent gotobackprofile = new Intent(EditProfile.this,Profile.class);
                                             startActivity(gotobackprofile);
@@ -143,10 +145,12 @@ public class EditProfile extends AppCompatActivity {
                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                             // berpindah activity
                             //Intent gotobackprofile = new Intent(EditProfile.this,Profile.class);
-                            //startActivity(gotobackprofile);
+                           // startActivity(gotobackprofile);
                         }
                     });
                 }
+                Intent gotobackprofile = new Intent(EditProfile.this,Profile.class);
+                startActivity(gotobackprofile);
             }
         });
         btn_add_new_photo.setOnClickListener(new View.OnClickListener() {

@@ -63,8 +63,7 @@ public class Register extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent firstpage = new Intent(Register.this,LandingPage.class);
-                startActivity(firstpage);
+                onBackPressed();
             }
         });
         btn_regis.setOnClickListener(new View.OnClickListener() {

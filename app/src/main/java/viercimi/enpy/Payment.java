@@ -34,7 +34,7 @@ public class Payment extends AppCompatActivity {
 
     RecyclerView payment_place, checkout_place;
 
-    DatabaseReference reference_cart, reference_payment, reference_order;
+    DatabaseReference reference_cart, reference_cart2, reference_payment, reference_order;
 
     String USERNAME_KEY = "usernamekey";
     String username_key = "";
@@ -123,10 +123,10 @@ public class Payment extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent prev = new Intent(Payment.this,Cart.class);
-                startActivity(prev);
+                onBackPressed();
             }
         });
+
         btn_pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,7 +134,7 @@ public class Payment extends AppCompatActivity {
                     Toast.makeText(Payment.this, "Please pick a payment method!", Toast.LENGTH_SHORT).show();
                 } else {
                     calendar = Calendar.getInstance();
-                    dateFormat = new SimpleDateFormat("DD MMM YYYY");
+                    dateFormat = new SimpleDateFormat("dd MMM YYYY");
 
                     reference_order = FirebaseDatabase.getInstance().getReference().child("Users").child(username_key_new).child("order_history").child(String.valueOf(order_number));
                     reference_order.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -151,6 +151,22 @@ public class Payment extends AppCompatActivity {
 
                         }
                     });
+
+                    reference_cart2 = FirebaseDatabase.getInstance().getReference().child("Users").child(username_key_new).child("cart");
+                    reference_cart2.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for(DataSnapshot dataSnapshot1: snapshot.getChildren()){
+                                dataSnapshot1.getRef().removeValue();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
                     Intent pay = new Intent(Payment.this,SuccessPayment.class);
                     startActivity(pay);
                 }

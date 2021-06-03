@@ -45,8 +45,7 @@ public class Login extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gostart = new Intent(Login.this,LandingPage.class);
-                startActivity(gostart);
+                onBackPressed();
             }
         });
 

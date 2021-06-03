@@ -65,18 +65,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                 notifyItemRangeChanged(position, myCart.size());
             }
         });
-
-/*
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent gotoproductdetail = new Intent(context, ProductDetail.class);
-                gotoproductdetail.putExtra("product_id", getProduct_id);
-                gotoproductdetail.putExtra("category_id", getCategory_id);
-                context.startActivity(gotoproductdetail);
-            }
-        });
-*/
     }
 
     @Override

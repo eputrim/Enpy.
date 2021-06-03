@@ -158,6 +158,10 @@ public class ProductDetail extends AppCompatActivity {
                     btnminus.animate().alpha(0).setDuration(300).start();
                     btnminus.setEnabled(false);
                 }
+                if(valuejumlah < Integer.parseInt(xquantity)){
+                    btnplus.animate().alpha(1).setDuration(300).start();
+                    btnplus.setEnabled(true);
+                }
             }
         });
 
@@ -183,8 +187,7 @@ public class ProductDetail extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back = new Intent(ProductDetail.this,Home.class);
-                startActivity(back);
+                onBackPressed();
             }
         });
 

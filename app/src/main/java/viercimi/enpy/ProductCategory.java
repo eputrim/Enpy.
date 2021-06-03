@@ -57,8 +57,7 @@ public class ProductCategory extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back = new Intent(ProductCategory.this,Home.class);
-                startActivity(back);
+                onBackPressed();
             }
         });
 

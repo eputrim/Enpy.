@@ -64,11 +64,12 @@ public class Cart extends AppCompatActivity {
                 startActivity(pay);
             }
         });
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pay = new Intent(Cart.this,Home.class);
-                startActivity(pay);
+                Intent gohome = new Intent(Cart.this,Home.class);
+                startActivity(gohome);
             }
         });
 

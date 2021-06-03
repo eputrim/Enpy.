@@ -89,8 +89,7 @@ public class EditProfile extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back = new Intent(EditProfile.this,Home.class);
-                startActivity(back);
+                onBackPressed();
             }
         });
         btn_save.setOnClickListener(new View.OnClickListener() {
@@ -144,8 +143,8 @@ public class EditProfile extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                             // berpindah activity
-                            //Intent gotobackprofile = new Intent(EditProfile.this,Profile.class);
-                           // startActivity(gotobackprofile);
+                            Intent gotobackprofile = new Intent(EditProfile.this,Profile.class);
+                             startActivity(gotobackprofile);
                         }
                     });
                 }

@@ -24,8 +24,8 @@ public class Profile extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     Button edit;
-    ImageView url_photo_profile;
-    TextView username, email, phone_number, address;
+    ImageView url_photo_profile, back;
+    TextView first_name, last_name, email, phone_number, address;
 
     DatabaseReference reference_user;
 
@@ -44,17 +44,19 @@ public class Profile extends AppCompatActivity {
         drawerLayout = findViewById(R.id.menu_drawer);
         edit = findViewById(R.id.edit);
         url_photo_profile = findViewById(R.id.url_photo_profile);
-        username = findViewById(R.id.username);
+        first_name = findViewById(R.id.first_name);
+        last_name = findViewById(R.id.last_name);
         phone_number = findViewById(R.id.phone_number);
         address = findViewById(R.id.address);
         email = findViewById(R.id.email);
+        back = findViewById(R.id.back);
 
         reference_user = FirebaseDatabase.getInstance().getReference().child("Users").child(username_key_new);
         reference_user.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //final String xphone = snapshot.child("phone_number").getValue().toString();
-                username.setText(snapshot.child("username").getValue().toString());
+                first_name.setText(snapshot.child("first_name").getValue().toString());
+                last_name.setText(snapshot.child("last_name").getValue().toString());
                 phone_number.setText(snapshot.child("phone_number").getValue().toString());
                 email.setText(snapshot.child("email").getValue().toString());
                 address.setText(snapshot.child("address").getValue().toString());
@@ -73,6 +75,14 @@ public class Profile extends AppCompatActivity {
             public void onClick(View v) {
                 Intent edit = new Intent(Profile.this, EditProfile.class);
                 startActivity(edit);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gohome = new Intent(Profile.this, Home.class);
+                startActivity(gohome);
             }
         });
     }

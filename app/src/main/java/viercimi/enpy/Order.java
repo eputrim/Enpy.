@@ -71,7 +71,8 @@ public class Order extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent gohome = new Intent(Order.this, Home.class);
+                startActivity(gohome);
             }
         });
     }

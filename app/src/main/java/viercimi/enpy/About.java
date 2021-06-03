@@ -3,12 +3,15 @@ package viercimi.enpy;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 public class About extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +19,15 @@ public class About extends AppCompatActivity {
         setContentView(R.layout.activity_about);
 
         drawerLayout = findViewById(R.id.menu_drawer);
+        back = findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gohome = new Intent(About.this, Home.class);
+                startActivity(gohome);
+            }
+        });
     }
 
     public void ClickBack (View view){

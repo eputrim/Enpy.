@@ -68,35 +68,6 @@
                 android:textColor="@color/primary_enpy"
                 android:textSize="23sp" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/btn_line_pink"
-                android:paddingHorizontal="13dp"
-                android:paddingVertical="10dp">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@null"
-                    android:fontFamily="@font/medium_montserrat"
-                    android:gravity="center_vertical"
-                    android:hint="Search here..."
-                    android:inputType="text"
-                    android:textColor="@color/primary_enpy"
-                    android:textSize="15sp" />
-
-                <ImageView
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/search_icon"
-                    android:text="Button" />
-            </RelativeLayout>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
